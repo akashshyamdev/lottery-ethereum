@@ -1,0 +1,30 @@
+{
+	"name": "lottery",
+	"version": "1.0.0",
+	"description": "A lottery application built using Ethereum, Solidity and Smart Contracts",
+	"main": "index.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/akashshyamdev/lottery-ethereum.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/akashshyamdev/lottery-ethereum/issues"
+	},
+	"homepage": "https://github.com/akashshyamdev/lottery-ethereum#readme",
+	"scripts": {
+		"test": "mocha -w tests/* "
+	},
+	"dependencies": {
+		"ganache-cli": "^6.12.2",
+		"mocha": "^8.3.2",
+		"solc": "^0.8.7-fixed",
+		"truffle-hdwallet-provider": "^1.0.17",
+		"web3": "^1.5.2"
+	},
+	"devDependencies": {
+		"prettier": "^2.3.2",
+		"prettier-plugin-solidity": "^1.0.0-beta.17"
+	}
+}

@@ -7,7 +7,8 @@
 		"avoid-sha3": "warn",
 		"quotes": "single",
 		"not-rely-on-time": "off",
-		"compiler-version": ["error", "^0.8"]
+		"compiler-version": ["error", "^0.8"],
+		"reason-string": ["warn", { "maxLength": 64 }]
 	},
 	"plugins": ["prettier"]
 }

@@ -1,39 +1,18 @@
 {
-	"name": "lottery",
-	"version": "1.0.0",
-	"description": "A lottery application built using Ethereum, Solidity and Smart Contracts",
-	"main": "index.js",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/akashshyamdev/lottery-ethereum.git"
-	},
-	"author": "",
-	"license": "ISC",
-	"bugs": {
-		"url": "https://github.com/akashshyamdev/lottery-ethereum/issues"
-	},
-	"homepage": "https://github.com/akashshyamdev/lottery-ethereum#readme",
-	"scripts": {
-		"test": "mocha -w tests/* ",
-		"prettier:solidity": "./node_modules/.bin/prettier --write contracts/**/*.sol"
-	},
-	"dependencies": {
-		"ganache-cli": "^6.12.2",
-		"mocha": "^8.3.2",
-		"solc": "^0.8.7-fixed",
-		"truffle-hdwallet-provider": "^1.0.17",
-		"web3": "^1.5.2"
-	},
-	"devDependencies": {
-		"husky": "^7.0.2",
-		"prettier": "^2.3.2",
-		"prettier-plugin-solidity": "^1.0.0-beta.17",
-		"solhint": "^3.3.6",
-		"solhint-plugin-prettier": "^0.0.5"
-	},
-	"husky": {
-		"hooks": {
-			"pre-push": "npm run prettier:solidity"
-		}
-	}
+  "name": "inbox",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -w tests/*"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ganache-cli": "^6.12.2",
+    "mocha": "^8.3.2",
+    "solc": "^0.4.17",
+    "truffle-hdwallet-provider": "^0.0.3",
+    "web3": "^1.3.5"
+  }
 }

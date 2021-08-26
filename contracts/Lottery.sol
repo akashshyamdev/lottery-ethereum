@@ -19,12 +19,19 @@ contract Lottery {
 		return uint256(keccak256(abi.encodePacked(block.difficulty, block.timestamp, players)));
 	}
 
-	function pickWinner() public {
-		require(msg.sender == manager, 'Only the manager can pick a winner');
-
+	function pickWinner() public restricted {
 		uint256 index = random() % players.length;
 		players[index].transfer(address(this).balance);
 
 		players = new address payable[](0);
+	}
+
+	function getAllPlayers() public view returns (address payable[] memory) {
+		return players;
+	}
+
+	modifier restricted() {
+		require(msg.sender == manager, 'Only the manager can pick a winner');
+		_;
 	}
 }

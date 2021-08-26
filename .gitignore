@@ -106,3 +106,6 @@ dist
 # IDE
 .vscode
 .idea
+
+# ENV
+config.js

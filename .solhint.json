@@ -5,6 +5,8 @@
 		"avoid-throw": false,
 		"avoid-suicide": "error",
 		"avoid-sha3": "warn",
+		"quotes": "single",
+		"not-rely-on-time": "off",
 		"compiler-version": ["error", "^0.8"]
 	},
 	"plugins": ["prettier"]

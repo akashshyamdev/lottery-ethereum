@@ -22,8 +22,6 @@ function App() {
 		})();
 	});
 
-	console.log(players);
-
 	const enter = async (e) => {
 		e.preventDefault();
 

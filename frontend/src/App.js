@@ -8,6 +8,7 @@ function App() {
 	const [manager, setManager] = useState(null);
 	const [balance, setBalance] = useState(false);
 	const [amount, setAmount] = useState(0);
+	const [message, setMessage] = useState('');
 
 	useEffect(() => {
 		(async () => {
@@ -21,25 +22,46 @@ function App() {
 		})();
 	});
 
-	console.log(manager);
+	console.log(players);
+
+	const enter = async (e) => {
+		e.preventDefault();
+
+		setMessage('Entering lottery...');
+		const accounts = await web3.eth.getAccounts();
+		await lottery.methods.enter().send({ from: accounts[0], value: web3.utils.toWei(amount, 'ether') });
+
+		setMessage('Entered lottery successfully!');
+	};
 
 	return (
 		<div>
 			<h2>Lottery</h2>
+
 			<p>
-				This is hosted by {manager}. There are currently {players.length} players competing for{' '}
-				{web3.utils.fromWei(balance, 'ether')} ether
+				This is hosted by {`${manager}`}. There are currently {players.length} players competing for {''}
+				{balance} ether
 			</p>
 
 			<hr />
-			<form>
+
+			<form onSubmit={enter}>
 				<h4>Want To Try Your Luck?</h4>
 
 				<div>
 					<label htmlFor='ether'>Amount Of Ether</label>
 					<input type='text' id='ether' value={amount} onChange={(e) => setAmount(e.target.value)} />
 				</div>
+
+				<button>Enter</button>
 			</form>
+
+			<hr />
+
+			<h4>Ready To Pick A Winner?</h4>
+			<button onClick={onClick}>Pick Winner</button>
+
+			<p>{message}</p>
 		</div>
 	);
 }

@@ -34,6 +34,17 @@ function App() {
 		setMessage('Entered lottery successfully!');
 	};
 
+	const onClick = async (e) => {
+		e.preventDefault();
+
+		setMessage('Picking winner...');
+		const accounts = await web3.eth.getAccounts();
+
+		await lottery.methods.pickWinner().send({ from: accounts[0] });
+
+		setMessage('Picked Winner!!!');
+	};
+
 	return (
 		<div>
 			<h2>Lottery</h2>

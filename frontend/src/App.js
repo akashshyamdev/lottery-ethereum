@@ -13,7 +13,7 @@ function App() {
 	useEffect(() => {
 		(async () => {
 			const managerAddress = await lottery.methods.manager().call();
-			const playersArr = await lottery.methods.getPlayers();
+			const playersArr = await lottery.methods.getPlayers().call();
 			const balanceAmt = await web3.eth.getBalance(lottery.options.address);
 
 			setManager(managerAddress);
